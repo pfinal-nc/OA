@@ -1,0 +1,43 @@
+<extend name="Layout::index" />
+<block name="content">
+<div id="content" class="white">
+            <h1><img src="__PUBLIC__/images/icons/posts.png" alt="" /> Table</h1>
+<div class="bloc">
+    <div class="title">
+        收支申报
+    </div>
+    <div class="content">
+     <form action="{:U('Finance/add')}" method="post" enctype="multipart/form-data">
+        <table>
+            <thead>
+                <tr>
+                    <th>支出人ID</th>
+                    <th>金额</th>
+                    <th>支出凭证</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                   <td><input type="text" name="id"></td>
+                   <td><input type="text" name="total"> </td>
+                   <td><input type='file'  name='pic'></td>
+                   <td>
+                    <select name="status" id="">
+                        <option value="0">收入</option>
+                        <option value="1">支出</option>
+                    </select>
+                   </td>
+                   <td><input type="submit" value="录入" /></td>
+                </tr>
+            </tbody>
+        </table>
+</form>    
+         <div class="pagination">
+           <!-- 分页-->
+        <a href="#" class="next">»</a>
+        </div> 
+    </div>
+</div>
+</block>

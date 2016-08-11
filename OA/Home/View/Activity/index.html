@@ -1,0 +1,54 @@
+<extend name="Layout:index" />
+<block name="title"><title>活动管理</title></block>
+<block name="content">
+     <!--            
+              CONTENT 
+                        --> 
+        <div id="content" class="white">
+            <h1><img src="__PUBLIC__/images/icons/posts.png" alt="" /> Table</h1>
+<div class="bloc">
+    <div class="title">
+        Table Content
+        <a href="{:U('Activity/add')}"><button style="width:100px;height:28px;border:none;background:#3C90C1;float:right;margin-right:40px;margin-top:3px;border-radius:10px;color:#2C6787;">添加活动</button></a>
+    </div>
+    <div class="content">
+        <table>
+            <thead>
+	            <tr>
+					<th colspan="7">
+					 	<form action="{:U('Activity/index')}">
+							<input type="text" name="content" placeholder="活动名称"/>
+							<button type="submit">搜索</button>
+						</form>
+					</th>
+				</tr>
+                <tr>
+                    <th><input type="checkbox" class="checkall"/></th>
+                    <th>编号</th>
+                    <th>活动</th>
+                    <th>开始时间</th>
+                    <th>发起人</th>
+                    <th>部门</th>
+                    <th>添加时间</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<foreach name="list" item="v">
+                    <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>{$v['aid']}</td>
+                    <td>{$v['acontent']}</td>
+                    <td>{$v['astarttime']}</td>
+                    <td>{$v['mname']}</a></td>
+                    <td>{$v['oname']}</td>
+                    <td>{$v['atime']}</td>
+                	</tr>
+                </foreach>
+                <tr>
+                	<td colspan="7">{$page}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</block>

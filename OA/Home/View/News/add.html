@@ -1,0 +1,27 @@
+<extend name="Layout::index" />
+<block name="content">
+	<div id="content" class="white">
+            <h1><img src="__PUBLIC__/images/icons/posts.png" alt="" /> Table</h1>
+<div class="bloc">
+    <div class="title">
+        添加新闻
+    </div>
+    <div class="content">
+        <table>
+			
+				<thead>
+					 <tr>
+						 <form action="{:U('News/doadd')}" method="post">
+							   标题：<input type="text" name="title" />
+							   内容：<input type="text" name="content" />
+							   <button type="submit">添加</button>
+						 </form>
+					</tr>
+				</thead>
+            
+        </table>
+        
+    </div>
+</div>
+
+</block>

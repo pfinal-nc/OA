@@ -1,0 +1,54 @@
+<extend name="Layout::index" />
+<block name="content">
+   <div id="content" class="white">
+            <h1><img src="__PUBLIC__/images/icons/posts.png" alt="" /> 统计</h1>
+	<div class="bloc">
+	    <div class="title">
+	        客户统计
+	    </div>
+	    <div class="content">
+	        <table>
+	            <thead>
+	                <tr>
+	                    <th><input type="checkbox" class="checkall"/></th>
+	                    <th>编号</th>
+	                    <th>所属部门</th>
+	                    <th>客户等级</th>
+	                    <th>客户电话</th>
+	                    <th>客户负责人</th>
+	                    <th>客户拥有量</th>
+	                    <th>录入时间</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	            <foreach name="data" item="val">
+	                 <tr>
+	                 	<th><input type="checkbox" class="checkall"/></th>
+	                    <td>{$val['omeid']}</td>
+	                    <td>{$val['ooaname']}</td>
+	                    <td>
+                        <if condition="$val['ocus'] eq 1">
+	                    潜在客户
+	                    <else />
+	                    目标客户
+	                    </if>
+	                    </td>
+	                    <td>{$val['otel']}</td>
+	                    <td>{$val['omename']}</td>
+	                    <td>{$val['sum']}</td>
+	                     <td>{$val['ocuadd']}</td>
+	                </tr>
+	                </foreach>
+	                <tr>
+	                	<td colspan="4"><b>客户总数:{$c}</b></td>
+	                	<td colspan="4"><b>潜在客户数:{$cu}</b></td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        <div class="pagination">         
+             {$page}
+	        </div>
+	    </div>
+	</div>
+</div>
+</block>

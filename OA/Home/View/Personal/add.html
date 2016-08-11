@@ -1,0 +1,24 @@
+<extend name="Layout:index"/>
+<block name="title"><title>完善信息</title></block>
+<block name="content">
+<div id="content" class="white">
+<div class="bloc">
+    <div class="content">
+    <form action="{:U('doadd')}" method="post" enctype="multipart/form-data">
+    <label>
+	电话:
+	    <input type="text" name="tel"><span style="color:red">*</span>
+	</label>
+	<label>
+	头像:
+	    <input type="file" name="pic"/><span style="color:red">
+	</label>
+	<label class="label">
+	    	<input type="reset"/>
+		    <input type="submit" value="确认修改" />
+    </label>
+	</form>
+</div>
+</div>
+</div>
+</block>

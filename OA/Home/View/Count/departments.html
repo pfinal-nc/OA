@@ -1,0 +1,46 @@
+<extend name="Layout::index" />
+<block name="content">
+   <div id="content" class="white">
+            <h1><img src="__PUBLIC__/images/icons/posts.png" alt="" /> 统计</h1>
+	<div class="bloc">
+	    <div class="title">
+	        部门统计
+	    </div>
+	    <div class="content">
+	        <table>
+	            <thead>
+	                <tr>
+	                    <th><input type="checkbox" class="checkall"/></th>
+	                    <th>编号</th>
+	                    <th>部门</th>
+	                    <th>部门分支数</th>
+	                    <th>人数</th>
+	                    <th>负责人</th>
+	                    <th>时间</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	            <foreach name="add" item="val">
+	                 <tr>
+	                 	<th><input type="checkbox" class="checkall"/></th>
+	                    <td>{$val['ooaid']}</td>
+	                    <td>{$val['ooaname']}</td>
+	                    <td>{$val['sum']}</td>
+	                    <td>{$val['pcount']}</td>
+	                    <td>{$val['omename']}</td>
+	                    <td>{$val['ooaadd']}</td>
+	                </tr>
+	                </foreach>
+	                <tr>
+	                	<td colspan="7" style="text-align:center"><b>部门总数:{$total}</b></td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        <div class="pagination">
+	         
+             {$page}
+	        </div>
+	    </div>
+	</div>
+</div>
+</block>

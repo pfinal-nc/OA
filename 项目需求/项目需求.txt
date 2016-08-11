@@ -1,0 +1,83 @@
+OA办公系统:
+	项目使用的编辑器PHPStorm：
+	版本控制器:git
+	版本库地址:https://git.oschina.net/Qcloub/MzOA.git
+	
+	本项目使用的是ThinkPHP3.2框架:
+	项目名称:MzOA办公系统
+	主要模块有:
+		登录
+		  不同部门的人登录以后就会跳转到不同的模块上
+			比如 财务部门的人登录以后直接跳转到财务页面下
+		
+		主页
+		   与网站的后台模块相似
+
+		新闻模块
+		   主要显示当前新闻 和 添加新闻
+			   
+		用户模块
+		   
+		   显示不同部门的人 
+			如果登录的人有权限 只能做本部门人员的删除 
+			如果登录的人没有权限 则不能删除删除
+			
+		财务模块
+		   主要功能有 账单的录入
+			账单的显示 
+
+		请假模块:
+		   主要显示请假的人的
+		     请假功能
+				
+	
+		统计模块
+			统计有多少人请假;
+			有多少个部门
+				每个部门有多少人
+			目前客户有多少个
+	
+		组织结构模块
+			公司有多少个部门
+			添加部门	
+			和无限级分类有点类似
+	
+		个人模块
+			个人信息完善
+			代审批的假期
+			修改密码
+
+		客户管理
+			客户的录入
+			客户的显示
+	
+		活动管理
+			活动的发起	
+				发起需要参加的人员
+
+			活动的显示		
+	
+	主要控制器有:
+		CommonController.class.php
+		IndexController.class.php
+		NewsController.class.php         新闻控制器
+		MemberController.class.php       用户控制器
+		CustomerController.class.php     客户管理
+		ActivityController.class.php     活动管理
+		PersonalController.class.php     个人管理
+		OrganizationController.class.php 组织结构模块
+		LoginController.class.php        登录退出
+		LeaveController.class.php        请假
+		FinanceController.class.php      财务
+		CountController.class.php        统计模块
+		
+注意:所有的文件名必须使用英语（百度翻译）
+	
+		
+		
+		
+		
+		
+	
+
+	

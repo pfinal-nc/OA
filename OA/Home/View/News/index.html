@@ -1,0 +1,28 @@
+<extend name="Layout::index" />
+<block name="content">
+<div id="content" class="white">
+            <h1><img src="__PUBLIC__/images/icons/posts.png" alt="" /> Table</h1>
+	
+		<div class="bloc">
+			<foreach name="list" item="val">
+			<li>
+			
+				<div class="title">标题:{$val['title']}</div>
+				<div class="title">楼主:{$val['name']} --添加时间:{$val['addtime']}</div>
+				
+				<div class="content">
+				
+					<div class="input textarea">
+						<label for="textarea1">Textarea</label>
+						<textarea name="text" id="textarea1" rows="7" cols="4">{$val['content']}</textarea>
+					</div>
+					
+				</div>
+				
+			</li>		
+			</foreach>
+		</div>
+			
+</div>
+
+</block>

@@ -1,0 +1,41 @@
+<extend name="layout::index" />
+<!--
+      CONTENT
+                -->
+<block name="content">
+    <div id="content" class="white">
+        <h1>添加工作成员</h1>
+        <hr>
+        <br><br><br>
+        <form action="{:U('Member/reguser')}" method="post">
+            员工姓名：<input type="text" name="name" placeholder="输入姓名">
+            <br><br><br>
+            员工密码：<input type="password" name="pwd" placeholder="输入密码">
+            <br><br><br>
+            注意：如果您添加的职位是“经理职位”，请选择顶级部门进行添加！！！
+            <br><br>
+            选择部门：
+                <select name="organ"><foreach name="list" item="value">
+                             <option value="{$value['id']}">
+                                 {$value['name']}
+                             </option>
+                    </foreach>
+                </select>
+            <br><br><br>
+            选择职位：<select name="order">
+                        <option value="0">部门经理</option>
+                        <option value="1">部门总监</option>
+                        <option value="2">部门组长</option>
+                        <option value="3">部门成员</option>
+                    </select>
+            <br><br><br>
+            确认添加：<input type="submit" value="添加成员">
+        </form>
+
+
+    </div>
+</block>
+
+
+</body>
+</html>

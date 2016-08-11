@@ -1,0 +1,50 @@
+<extend name="Layout::index" />
+<block name="content">
+   <div id="content" class="white">
+            <h1><img src="__PUBLIC__/images/icons/posts.png" alt="" /> 部门</h1>
+	<div class="bloc">
+	    <div class="title">
+	        部门管理 <a href="{:U('Organization/add')}"><button class="add_department">部门添加</button></a> 
+	    </div>
+	    <div class="content">
+	        <table>
+	            <thead>
+	                <tr>
+	                    <th width="2%"><input type="checkbox" class="checkall"/></th>
+	                    <th width="20%">编号</th>
+	                    <th width="30%">部门</th> 
+	                    <th width="30%">时间</th>
+	                    <th>操作</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	           	<foreach name="org" item="vall" >
+	                 <tr>
+	                 	<th><input type="checkbox" class="checkall"/></th>
+	                    <td>{$vall['id']}</td>
+	                    <td>{$vall['name']}</td>
+	                    <td>{$vall.addtime|date="Y-m-d",###}</td>
+	                    <td><a href="{:U('Organization/index',array('pid'=>$vall['id']))}">下级部门</a>&nbsp;&nbsp;&nbsp;<a href="{:U('Organization/dele',array('id'=>$vall['id']))}">删除</a></td>
+	                </tr>
+	             </foreach>
+
+	            </tbody>
+	        </table>
+	        <div class="back_upper"><a href="{:U('Organization/index',array('pid'=>$or['pid']))}"><button class="add_department">返回上一层</button></a></div>
+	        <div class="pagination">
+	            <a href="#" class="prev">«</a>
+	            <a href="#">1</a>
+	            <a href="#" class="current">2</a>
+	            ...
+	            <a href="#">21</a>
+	            <a href="#">22</a>
+	            <a href="#" class="next">»</a>
+	        </div>
+	    </div>
+	</div>
+</div>
+</block>
+
+        
+    </body>
+</html>

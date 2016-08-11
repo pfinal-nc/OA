@@ -1,0 +1,43 @@
+<extend name="Layout:index" />
+<block name="title"><title>添加活动</title></block>
+<block name="content">
+  <!--            
+              CONTENT 
+                        --> 
+<div id="content" class="white">
+    <h1><img src="__PUBLIC__/images/icons/posts.png" alt="" /> Forms</h1>
+
+<div class="bloc">
+    <div class="title">Simple inputs</div>
+    <div class="content">
+    <form action="{:U('Activity/add')}" method="post">
+        <div class="input">
+            <label for="input1">Starttime (开始时间):</label>
+            <input type="text" id="input1" name="starttime"/>
+            Some informations on how to use this field
+        </div>
+        <div class="input">
+            <label for="select">Organization_id (部门分类):</label>
+            <select name="Organization_id" id="select">
+                <foreach name="list" item="val">
+					<option value="{$val['id']}">
+						{$val['name']}
+					</option>
+					</foreach>
+            </select>
+            Some informations on how to use this field
+        </div>
+        <div class="input textarea">
+            <label for="textarea1">content (活动内容):</label>
+            <textarea name="content" id="textarea1" rows="7" cols="4"></textarea>
+        </div>
+        <div class="submit">
+            <input type="submit" value="Add" />
+            <input type="reset" value="Black button" class="black"/>
+            <input type="reset" value="White button" class="white"/>
+        </div>
+    </form>
+    </div>
+</div>      
+
+</block>

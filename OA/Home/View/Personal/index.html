@@ -1,0 +1,49 @@
+<extend name="Layout:index"/>
+<block name="title"><title>个人中心</title></block>
+<block name="content">
+<div id="content" class="white">
+<div class="bloc">
+    <div class="content">
+            <foreach name="list" item="val">
+	       <ul>
+	        <li><b>头像:</b> <img style="display:block;width:100px;height:100px;border-radius:50px;" src="__ROOT__{$val['uif']}" alt=""></li><br/>
+	        <li><b>姓名:</b> {$val['name']}</li><br/>
+		    <li><b>部门:</b> 
+            <switch name="val['Organization_id']">
+                <case value="0">人事部</case>
+			    <case value="1">财务部</case>    
+			    <case value="2">销售部</case>
+			    <case value="3">IT部</case>   
+			    <case value="4">客服部</case> 
+			    <case value="5">仲裁部</case>
+			    <default />人事部
+			</switch>
+			</li><br/>
+		    <li><b>ID:</b> {$val['id']}</li><br/>
+		    <li><b>性别:</b>
+            <switch name="$val['sex']">
+			    <case value="0">男</case>
+			    <case value="1">女</case>
+			    <default />男
+			</switch>
+		    </li><br/>
+		    <li><b>职位:</b>
+            <switch name="val['Order']">
+			    <case value="0">部门老大</case>
+			    <case value="1">总监</case>
+			    <case value="2">组长</case>   
+			    <case value="3">员工</case>
+			    <default />员工
+			</switch>
+		    </li><br/>
+		    <li><b>电话:</b>{$val['tel']}</li><br/>
+		    <li><b>账号注册时间:</b>{:date('Y年m月d日H:i:s',$val['addtime'])}</li><br/>
+		    <li><b>完善时间:</b>{:date('Y年m月d日H:i:s',$val['updatetime'])}</li>
+	    </ul>
+	    </foreach>
+	    <a href="{:U('add')}"><button>完善个人信息</button></a>
+	    <a href="{:U('reset')}"><button>重置个人密码</button></a>
+        </div> 
+    </div>
+</div>
+</block>

@@ -1,0 +1,57 @@
+<extend name="Layout::index" />
+<block name="content">
+   <div id="content" class="white">
+            <h1><img src="__PUBLIC__/images/icons/posts.png" alt="" /> 统计</h1>
+	<div class="bloc">
+	    <div class="title">
+	        请假统计
+	    </div>
+	    <div class="content">
+	        <table>
+	            <thead>
+	                <tr>
+	                    <th><input type="checkbox" class="checkall"/></th>
+	                    <th>编号</th>
+	                    <th>所属部门</th>
+	                    <th>申请人</th>
+	                    <th>审批人</th>
+	                    <th>审批结果</th>
+	                    <th>请假次数</th>
+	                    <th>请假时间</th>
+	                    <th>部门请假总数</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	            <foreach name="data" item="val">
+	                 <tr>
+	                 	<th><input type="checkbox" class="checkall"/></th>
+	                    <td>{$val['lid']}</td>
+	                    <td>{$val['oname']}</td>
+	                    <td>{$val['mname']}</td>
+	                    <td>{$val['lup']}</td>
+	                    <td>
+                        <if condition="$val['ls'] eq 1">
+	                    审核通过
+	                    <else />
+	                    审核未过
+	                    </if>
+	                    </td>
+	                    <td>{$val['sum']}</td>
+	                    <td>{$val['la']}</td>
+	                    <td>{$val['sum1']}</td>
+	                </tr>
+	                </foreach>
+	                <tr>
+	                	<td style="text-align:center" colspan="9">
+	                		请假总数:{$count}
+	                	</td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        <div class="pagination">         
+             {$page}
+	        </div>
+	    </div>
+	</div>
+</div>
+</block>

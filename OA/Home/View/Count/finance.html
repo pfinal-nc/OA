@@ -1,0 +1,48 @@
+<extend name="Layout::index" />
+<block name="content">
+   <div id="content" class="white">
+            <h1><img src="__PUBLIC__/images/icons/posts.png" alt="" /> 统计</h1>
+	<div class="bloc">
+	    <div class="title">
+	        财务统计
+	    </div>
+	    <div class="content">
+	        <table>
+	            <thead>
+	                <tr>
+	                    <th><input type="checkbox" class="checkall"/></th>
+	                    <th>编号</th>
+	                    <th>所属部门</th>
+	                    <th>用户姓名</th>
+	                    <th>金额</th>
+	                    <th>收支事件</th>
+	                    <th>收支情况</th>
+	                    <th>录入时间</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	            <foreach name="list" item="val">
+	                 <tr>
+	                 	<th><input type="checkbox" class="checkall"/></th>
+	                    <td>{$val['omes']}</td>
+	                    <td>{$val['ooaname']}</td>
+	                    <td>{$val['omename']}</td>
+	                    <td>{$val['total']}</td>
+	                    <td>{$val['content']}</td>
+	                    <td>{$val['status']}</td>
+	                     <td>{$val['oofadd']}</td>
+	                </tr>
+	                </foreach>
+	                <tr>
+	                	<td colspan="4"><b>支出总金额:{$c}</b></td>
+	                	<td colspan="4"><b>收入总金额:{$cu}</b></td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        <div class="pagination">         
+             {$page}
+	        </div>
+	    </div>
+	</div>
+</div>
+</block>

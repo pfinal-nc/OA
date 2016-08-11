@@ -1,0 +1,73 @@
+<extend name="Layout::index" />               
+        <!--            
+              CONTENT 
+                        --> 
+        <block name="content">
+                <div id="content" class="white">
+
+
+<div class="bloc">
+    <div class="title">
+        请假申请单
+    </div>
+    <div class="content">
+        <div>
+            <a href="{:U('Leave/add')}">
+                <button style="width:100px;height:40px;">请假申请</button>
+            </a>
+        </div>
+        <br>
+        <div>
+            <table border="1" cellspacing="0" cellpadding="5" align="center">
+
+            <tr>
+                <th colspan="10">
+                    <form action="{:U('Leave/index')}">
+                        <input type="text" name="content" placeholder="搜索休假类型"/>
+                        <button type="submit">搜索</button>
+                    </form>
+                </th>
+            </tr>
+
+            <tr bgcolor="#DEDEE7" style="font-size:17px;">
+                <th>编号</th>
+                <th>申请人</th>
+                <th>请假时长</th>
+                <th>休假类型</th>
+                <th>审批结果</th>
+                <th>审批人</th>
+                <th>操作</th>
+            </tr>
+            <foreach name="list" item="val">
+                <tr>
+                    <td>{$val['lid']}</td>
+                    <td>{$val['mname']}</td>
+                    <td>{$val['la']}天</td>
+                    <td>{$val['lc']}</td>
+                    <td>
+                        <if condition="$val['ls'] eq 1">
+                    <a href="{:U('Leave/tong',['id'=>$val['lid']])}">通过</a>
+                    <else/>
+                    <a href="{:U('Leave/tong',['id'=>$val['lid']])}">不通过</a>
+                    </if>
+
+                    </td>
+
+                    <td>0</td>
+                                    
+                    <td><a href="{:U('Leave/delete',['id'=>$val['lid'],'p'=>$p])}">删除</a></td>
+                </tr>
+            </foreach>
+            <tr>
+                <th style="text-align:center;" colspan="6">
+                    {$page}
+                </th>
+            </tr>
+        </table>
+        </div>
+        
+    </div>
+</div>        
+
+</div>
+</block>

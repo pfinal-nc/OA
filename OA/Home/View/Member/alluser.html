@@ -1,0 +1,56 @@
+<extend name="layout::index" />
+<!--
+      CONTENT
+                -->
+<block name="content">
+    <div id="content" class="white">
+        <h1>部门管理</h1>
+        <hr>
+
+        <table border="1" cellspacing="0" cellpadding="5">
+            <tr>
+                <td>编号</td>
+                <td>姓名</td>
+                <td>Organization_id</td>
+                <td>职位</td>
+                <td>状态</td>
+                <td>添加时间</td>
+                <td>操作</td>
+            </tr>
+
+            <foreach name="list" item="val">
+                <tr>
+                    <td>{$val.id}</td>
+                    <td>{$val.name}</td>
+                    <td>{$val.organization_id}</td>
+                    <td>
+                        <switch name="val['order']">
+                            <case value="0">经理</case>
+                            <case value="1">总监</case>
+                            <case value="2">组长</case>
+                            <case value="3">员工</case>
+                        </switch>
+                    </td>
+                    <td><button><a href="{:U('Member/upstatus',['uid'=>$val['id'],'status'=>$val['status']])}">{$val['status']?'已禁用':'正常'}</a></button></td>
+                    <td>{$val['addtime']|date="Y-m-d",###}</td>
+                    <td>
+                        <switch name="order">
+                            <case value="0"><button><a href="{:U('Member/deluser',['uid'=>$val['id']])}">删除</a></button></case>
+                            <case value="1">无权操作</case>
+                            <case value="2">无权操作</case>
+                            <case value="3">无权操作</case>
+                        </switch>
+                    </td>
+                </tr>
+            </foreach>
+
+        </table>
+
+
+
+    </div>
+</block>
+
+
+</body>
+</html>

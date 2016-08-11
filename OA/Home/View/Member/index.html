@@ -1,0 +1,44 @@
+<extend name="layout::index" />
+<!--
+      CONTENT
+                -->
+<block name="content">
+    <div id="content" class="white">
+       <h1>部门管理</h1>
+        <hr>
+        <button><a href="{:U('Member/adduser')}">添加成员</a></button>
+
+        <table border="1" cellspacing="0" cellpadding="5">
+            <tr>
+                <td>编号</td>
+                <td>部门名称</td>
+                <td>PID</td>
+                <td>PATH</td>
+                <td>添加时间</td>
+                <td>操作</td>
+            </tr>
+
+            <foreach name="list" item="val">
+                <tr>
+                    <td>{$val.id}</td>
+                    <td>{$val.name}</td>
+                    <td>{$val.pid}</td>
+                    <td>{$val.path}</td>
+                    <td>{$val['addtime']|date="Y-m-d",###}</td>
+                    <td>
+                        <button><a href="{:U('Member/sonorgan',['orid'=>$val['id'],'orpath'=>$val['path']])}">查看子部门</a></button>
+                        <button><a href="{:U('Member/Alluser',['orid'=>$val['id'],'orpath'=>$val['path']])}">查看部门成员</a></button>
+                    </td>
+                </tr>
+            </foreach>
+
+        </table>
+
+
+
+    </div>
+</block>
+
+
+</body>
+</html>

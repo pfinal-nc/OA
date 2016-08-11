@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+ <head>
+        <block name="title"><title>请假申请添加</title></block>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    
+        <script type="text/javascript" src="__PUBLIC__/js/libs/jquery/1.6/jquery.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/js/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+        
+        <!-- Compressed Version
+        <link type="text/css" rel="stylesheet" href="min/b=CoreAdmin&f=css/reset.css,css/style.css,css/jqueryui/jqueryui.css,js/jwysiwyg/jquery.wysiwyg.old-school.css,js/zoombox/zoombox.css" />
+        <script type="text/javascript" src="__PUBLIC__/min/b=CoreAdmin/js&f=cookie/jquery.cookie.js,jwysiwyg/jquery.wysiwyg.js,tooltipsy.min.js,iphone-style-checkboxes.js,excanvas.js,zoombox/zoombox.js,visualize.jQuery.js,jquery.uniform.min.js,main.js"></script>
+        -->
+        <link rel="stylesheet" href="__PUBLIC__/css/min.css" />
+        <script type="text/javascript" src="__PUBLIC__/js/min.js"></script>
+        
+    </head>
+    <body>
+        
+        <script type="text/javascript" src="__PUBLIC__/content/settings/main.js"></script>
+<link rel="stylesheet" href="__PUBLIC__/content/settings/style.css" />
+
+
+  <div class="settings" id="settings">
+        <div class="wrapper">
+            <div class="grid3">
+                <div class="titre">Backgrounds</div>
+                <a href="url(__PUBLIC__/css/img/bg.html" class="backgroundChanger active" title="White"></a>
+                <a href="url(__PUBLIC__/css/img/dark-bg.html" class="backgroundChanger dark" title="Dark"></a>
+                <a href="url(__PUBLIC__/css/img/wood.html" class="backgroundChanger dark" title="Wood"></a>
+                <a href="url(__PUBLIC__/css/img/altbg/smoothwall.html" class="backgroundChanger" title="Smoothwall"></a>
+                <a href="url(__PUBLIC__/css/img/altbg/black_denim.html" class="backgroundChanger dark" title="black_denim"></a>
+                <a href="url(__PUBLIC__/css/img/altbg/carbon.html" class="backgroundChanger dark" title="Carbon"></a>
+                <a href="url(__PUBLIC__/css/img/altbg/double_lined.html" class="backgroundChanger" title="Double lined"></a>
+                <div class="clear"></div>
+            </div>
+            <div class="grid3">
+                <div class="titre">Bloc style</div>
+                <a href="black.html" class="blocChanger" title="Black" style="background:url(__PUBLIC__/css/img/bloctitle.png);"></a>
+                <a href="white.html" class="blocChanger active" title="White" style="background:url(__PUBLIC__/css/img/white-title.png);"></a>
+                <a href="wood.html" class="blocChanger" title="Wood" style="background:url(__PUBLIC__/css/img/wood-title.jpg);"></a>
+                <div class="clear"></div>
+            </div>
+            <div class="grid3">
+                <div class="titre">Sidebar style</div>
+                <a href="grey.html" class="sidebarChanger active" title="Grey" style="background:#494949"></a>
+                <a href="black.html" class="sidebarChanger" title="Black" style="background:#262626"></a>
+                <a href="white.html" class="sidebarChanger" title="White" style="background:#EEEEEE"></a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <a class="settingbutton" href="#">
+
+        </a>
+    </div>        
+        <!--              
+                HEAD
+                        --> 
+        <div id="head">
+            <div class="left">
+                <a href="#" class="button profile"><img src="__PUBLIC__/images/icons/top/huser.png" alt="" /></a>
+                Hi, 
+                <a href="#">John Doe</a>
+                |
+                <a href="#">Logout</a>
+            </div>
+            <div class="right">
+                <form action="#" id="search" class="search placeholder">
+                    <label>Looking for something ?</label>
+                    <input type="text" value="" name="q" class="text"/>
+                    <input type="submit" value="rechercher" class="submit"/>
+                </form>
+            </div>
+        </div>
+                
+                
+        <!--            
+                SIDEBAR
+                         --> 
+        <div id="sidebar">
+            <ul>
+                <li>
+                    <a href="{:U('Index/index')}">
+                        <img src="__PUBLIC__/images/icons/menu/inbox.png" alt="" />
+                        首页
+                    </a>
+                </li>
+                <li class="current"><a href="#"><img src="__PUBLIC__/images/icons/menu/layout.png" alt="" />管理系统</a>
+                <ul>
+                        <li class="current"><a href="{:U('User/index')}">用户管理</a></li>
+                        <li><a href="{:U('Customer/index')}">客户管理</a></li>
+                        <li><a href="{:U('Activity/index')}">活动管理</a></li>
+                        <li><a href="{:U('Personal/index')}">个人管理</a></li>
+                        <li><a href="{:U('Leave/index')}">请假管理</a></li>
+                    </ul>
+                </li>
+                <li><a href="{:U('News/index')}"><img src="__PUBLIC__/images/icons/menu/brush.png" alt="" />新闻</a>
+                    <ul>
+                        <li><a href="#">添加新闻</a></li>
+                        <li><a href="#">Fake menu #2</a></li>
+                        <li><a href="#">Fake menu #3</a></li>
+                    </ul>
+                </li>
+                <li><a href="{:U('Finance/index')}"><img src="__PUBLIC__/images/icons/menu/brush.png" alt="" />财务</a>
+                    <ul>
+                        <li><a href="#">Fake menu #1</a></li>
+                        <li><a href="#">Fake menu #2</a></li>
+                        <li><a href="#">Fake menu #3</a>
+                        <ul>
+                            <li><a href="#">Fake menu #1</a></li>
+                            <li><a href="#">Fake menu #2</a></li>
+                            <li><a href="#">Fake menu #3</a>
+                                <ul>
+                                    <li><a href="#">Fake menu #1</a></li>
+                                    <li><a href="#">Fake menu #2</a></li>
+                                    <li><a href="#">Fake menu #3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#"><img src="__PUBLIC__/images/icons/menu/lab.png" alt="" />统计</a>
+                     <ul>
+                        <li><a href="{:U('Count/index')}">用户统计</a></li>
+                        <li><a href="#">Fake menu #2</a></li>
+                        <li><a href="#">Fake menu #3</a>
+                        <ul>
+                            <li><a href="#">Fake menu #1</a></li>
+                            <li><a href="#">Fake menu #2</a></li>
+                            <li><a href="#">Fake menu #3</a>
+                                <ul>
+                                    <li><a href="#">Fake menu #1</a></li>
+                                    <li><a href="#">Fake menu #2</a></li>
+                                    <li><a href="#">Fake menu #3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </li>
+                    </ul>
+
+                </li>
+                <li><a href=":U('Organization/index')"><img src="__PUBLIC__/images/icons/menu/comment.png" alt="" />组织结构</a>
+                     <ul>
+                        <li><a href="#">Fake menu #1</a></li>
+                        <li><a href="#">Fake menu #2</a></li>
+                        <li><a href="#">Fake menu #3</a>
+                        <ul>
+                            <li><a href="#">Fake menu #1</a></li>
+                            <li><a href="#">Fake menu #2</a></li>
+                            <li><a href="#">Fake menu #3</a>
+                                <ul>
+                                    <li><a href="#">Fake menu #1</a></li>
+                                    <li><a href="#">Fake menu #2</a></li>
+                                    <li><a href="#">Fake menu #3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </li>
+                    </ul>
+
+                </li>
+            </ul>
+
+
+        </div>
+                
+               
+        <!--            
+              CONTENT 
+                        --> 
+        <block name="content">
+                <div id="content" class="white">
+
+
+<div class="bloc">
+    <div class="title">
+        请假申请单
+    </div>
+    <div class="content">
+        <div style="text-align:center;">
+            <h2>请 假 条</h2>
+            <br>
+            <form action="{:U('Leave/add')}" method="post" style="font-size:18px;">
+                审 &nbsp;批 人：
+                    <input type="text" name="mo" readonly="readonly" value="0"/>
+                <br><br>
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                请假缘由：
+                    <textarea name="content"></textarea>
+                <br><br>
+                请假天数：
+                    <input type="text" name="addtime" placeholder="请假时长"/>
+                <br><br> 
+                
+                <input style="width:80px;height:35px;" type="submit" value="提交">
+            </form>
+        </div>
+    </div>
+</div>        
+
+</div>
+</block>
+        
+        
+    </body>
+</html>
